@@ -4,9 +4,9 @@ from matplotlib import pyplot as plt
 from matplotlib import image as mpimg
 from roipoly import RoiPoly
 
-# Save labeled region of interest image to a file
+# Save labeled region of interest image to a file. Remove extension of file and convert from png to csv
 def create_labeled_file(roi_data, image_file_name):
-    # Remove extension of file and convert from png to csv
+    
     image_file_name = image_file_name[0:-3] + 'csv'
     image_file_path = os.path.join('Data/Labeled', image_file_name)
     image_file = open(image_file_path, "x")
@@ -66,7 +66,8 @@ def label_image(folder_path, image_to_label):
 def main():
     folder = 'Data/ECE5242Proj1-train'    
     for filename in os.listdir(folder):
-        if filename not in os.listdir('Data/Labeled'): # Check if file is already labeled
+        image_file_name = filename[0:-3] + 'csv'
+        if image_file_name not in os.listdir('Data/Labeled'): # Check if file is already labeled
             label_image(folder, filename)
 
 if __name__ == '__main__':
