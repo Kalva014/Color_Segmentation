@@ -6,5 +6,9 @@ I implement algorithms that learn the color model, segment the target color, and
 
 # Instructions if you want to run on trained image:
 1. Place a test image file in the Test_Images folder
-2. For  the third code cell and in the function "def get_test_image():" change string to file you want to test.
-3. Now preconfiguration is finished run all cells in the notebook
+2. In the third code cell there is a function called "unlabeled_img = get_test_image(real_test_folder, 'test_5.png'):". Change the string to file you want to test.
+3. Now preconfiguration is finished so run all cells in the notebook.
+4. You can see the outputs from the last few cells.
+
+SIDE NOTE:
+By running all the cells it trains the model since we don't use the EM step in the multivariate gaussian.
